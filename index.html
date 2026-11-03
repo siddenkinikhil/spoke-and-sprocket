@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spoke & Sprocket | Bike repair workshop</title>
+  <meta name="description" content="Friendly bike repair, tune-ups and custom builds. Most repairs done in 48 hours.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">Spoke &amp; Sprocket</a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Your bike, back on the road in 48 hours.</h1>
+          <p>We fix, tune and build bikes for commuters, weekend riders and everyone in between. Honest prices, and we always show you the worn part before we replace it.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn" id="ctaBtn">Book a repair</a>
+            <a href="#services" class="link-plain">See what we fix</a>
+          </div>
+        </div>
+        <div class="hero-card" aria-label="Opening hours">
+          <h2>This week at the shop</h2>
+          <p class="open-status" id="openStatus">Checking hours...</p>
+          <ul>
+            <li><span>Mon – Fri</span><span>9:00 – 19:00</span></li>
+            <li><span>Saturday</span><span>10:00 – 17:00</span></li>
+            <li><span>Sunday</span><span>Closed</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div>
+          <h2>About us</h2>
+          <p>Spoke &amp; Sprocket started in 2014 in a garage with one work stand and a lot of spare tubes. Today we are a team of four mechanics, and we still treat every bike like it is our own.</p>
+          <p>Whether it is a ten-year-old school bike or a carbon road machine, you get the same careful work and a plain-English explanation of what we did.</p>
+        </div>
+        <ul class="stats">
+          <li><strong>9,000+</strong> bikes repaired</li>
+          <li><strong>48 hrs</strong> typical turnaround</li>
+          <li><strong>6 months</strong> warranty on labour</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section alt" id="services">
+      <div class="container">
+        <h2>Services</h2>
+        <p class="section-intro">Prices are starting points. We confirm the final cost with you before any work begins.</p>
+
+        <div class="service-grid">
+          <article class="service">
+            <h3>Basic tune-up</h3>
+            <p>Brake and gear adjustment, tyre pressure, chain clean and a safety check.</p>
+            <p class="price">from ₹499</p>
+          </article>
+          <article class="service">
+            <h3>Full service</h3>
+            <p>Everything in the tune-up plus bearings, wheel truing and a deep drivetrain clean.</p>
+            <p class="price">from ₹1,499</p>
+          </article>
+          <article class="service">
+            <h3>Puncture and tyres</h3>
+            <p>Tube or tyre swap while you wait. Most jobs take under 20 minutes.</p>
+            <p class="price">from ₹149</p>
+          </article>
+          <article class="service">
+            <h3>Custom builds</h3>
+            <p>Tell us how you ride and your budget. We source the parts and assemble your bike.</p>
+            <p class="price">quote on request</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <h2>Contact</h2>
+          <p>Tell us what is wrong with your bike and we will reply within one working day.</p>
+          <address>
+            14 Cycle Lane, Uppal<br>
+            Hyderabad, Telangana<br><br>
+            <a href="tel:+910000000000">+91 9542810422</a><br>
+            <a href="mailto:hello@spokeandsprocket.example">dummymail@gmail.com</a>
+          </address>
+        </div>
+
+        <form id="contactForm" novalidate>
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" autocomplete="name">
+          <small class="error" id="nameError"></small>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email">
+          <small class="error" id="emailError"></small>
+
+          <label for="message">What needs fixing?</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+          <small class="error" id="messageError"></small>
+
+          <button type="submit" class="btn">Send request</button>
+          <p class="form-success" id="formSuccess" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Spoke &amp; Sprocket. Made for a Week 1 assignment.</p>
+      <a href="#home">Back to top</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

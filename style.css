@@ -1,0 +1,201 @@
+/* ---------- Variables ---------- */
+:root {
+  --green: #1f4d3a;
+  --green-dark: #163828;
+  --yellow: #f2c230;
+  --paper: #f7f8f5;
+  --tint: #e8eee9;
+  --text: #22302a;
+  --muted: #55655d;
+  --error: #b3261e;
+  --radius: 10px;
+}
+
+/* ---------- Reset and base ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+
+body {
+  font-family: "Work Sans", system-ui, sans-serif;
+  color: var(--text);
+  background: var(--paper);
+  line-height: 1.65;
+}
+
+h1, h2, h3, .logo {
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  line-height: 1.15;
+}
+
+h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); margin-bottom: 1rem; color: var(--green); }
+h3 { font-size: 1.2rem; margin-bottom: 0.4rem; }
+p { margin-bottom: 1rem; max-width: 62ch; }
+a { color: inherit; }
+
+:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+
+.container { width: min(1100px, 100% - 2.5rem); margin-inline: auto; }
+
+/* ---------- Navbar ---------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--green);
+  color: #fff;
+  transition: box-shadow 0.2s;
+}
+.navbar.scrolled { box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25); }
+
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+
+.logo { font-size: 1.25rem; font-weight: 800; text-decoration: none; }
+
+.nav-links { display: flex; gap: 0.5rem; list-style: none; }
+.nav-links a {
+  display: block;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-links a:hover { background: var(--green-dark); }
+.nav-links a.active { background: var(--yellow); color: var(--green-dark); }
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: 0;
+  padding: 8px;
+  cursor: pointer;
+}
+.menu-btn span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: #fff;
+  margin: 5px 0;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.menu-btn.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.menu-btn.open span:nth-child(2) { opacity: 0; }
+.menu-btn.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  background: var(--yellow);
+  color: var(--green-dark);
+  font: 600 1rem "Bricolage Grotesque", sans-serif;
+  border: 0;
+  border-radius: var(--radius);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.15s;
+}
+.btn:hover { background: #ffd24d; transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+
+.link-plain { color: #fff; font-weight: 500; }
+
+/* ---------- Hero ---------- */
+.hero { background: var(--green); color: #fff; padding: 5rem 0 6rem; }
+
+.hero-inner { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: center; }
+
+.hero h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); font-weight: 800; margin-bottom: 1.2rem; }
+.hero p { font-size: 1.1rem; color: #dbe7e0; }
+
+.hero-actions { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.5rem; }
+
+.hero-card {
+  background: var(--paper);
+  color: var(--text);
+  padding: 1.6rem;
+  border-radius: var(--radius);
+  border-top: 6px solid var(--yellow);
+}
+.hero-card h2 { font-size: 1.2rem; margin-bottom: 0.4rem; }
+.hero-card ul { list-style: none; }
+.hero-card li { display: flex; justify-content: space-between; padding: 0.5rem 0; border-top: 1px solid var(--tint); }
+
+.open-status { font-weight: 500; margin-bottom: 0.8rem; }
+.open-status.is-open { color: #1d7a3e; }
+.open-status.is-closed { color: var(--error); }
+
+/* ---------- Sections ---------- */
+.section { padding: 5rem 0; }
+.section.alt { background: var(--tint); }
+.section-intro { color: var(--muted); margin-bottom: 2rem; }
+
+/* About */
+.about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: center; }
+.stats { list-style: none; display: grid; gap: 1rem; }
+.stats li { padding: 1.1rem 1.4rem; background: #fff; border-left: 6px solid var(--yellow); border-radius: var(--radius); color: var(--muted); }
+.stats strong { display: block; font: 800 1.9rem "Bricolage Grotesque", sans-serif; color: var(--green); }
+
+/* Services */
+.service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.25rem; }
+.service {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.service:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(31, 77, 58, 0.15); }
+.service p { color: var(--muted); }
+.service .price { color: var(--green); font-weight: 600; margin: 1rem 0 0; }
+
+/* Contact */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+address { font-style: normal; }
+address a { color: var(--green); }
+
+form { background: #fff; padding: 1.8rem; border-radius: var(--radius); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06); }
+label { display: block; font-weight: 500; margin-top: 1rem; }
+input, textarea {
+  width: 100%;
+  margin-top: 0.3rem;
+  padding: 0.7rem 0.8rem;
+  font: inherit;
+  border: 2px solid #c9d3cd;
+  border-radius: 8px;
+}
+input:focus, textarea:focus { outline: none; border-color: var(--green); }
+input.invalid, textarea.invalid { border-color: var(--error); }
+.error { display: block; min-height: 1.2rem; color: var(--error); font-size: 0.85rem; }
+form .btn { margin-top: 1rem; }
+.form-success { margin: 1rem 0 0; color: #1d7a3e; font-weight: 500; }
+
+/* ---------- Footer ---------- */
+.footer { background: var(--green-dark); color: #cfdcd4; padding: 1.5rem 0; font-size: 0.9rem; }
+.footer-inner { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.footer p { margin: 0; }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 800px) {
+  .menu-btn { display: block; margin-left: auto; }
+
+  .nav-links {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--green);
+    padding: 0.5rem 1.25rem 1rem;
+    display: none;
+  }
+  .nav-links.open { display: flex; }
+
+  .hero { padding: 3.5rem 0 4rem; }
+  .hero-inner, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .section { padding: 3.5rem 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
