@@ -2,13 +2,7 @@
 
 A responsive landing page for a fictional bike repair workshop, built with plain HTML, CSS and JavaScript (no frameworks, no build step). This is my Week 1 assignment.
 
-## Screenshots
 
-| Desktop | Mobile | Mobile menu |
-|---|---|---|
-| ![Desktop](screenshots/desktop-full.png) | ![Mobile](screenshots/mobile-full.png) | ![Menu](screenshots/mobile-menu.png) |
-
-Form validation on mobile: `screenshots/mobile-form-errors.png`
 
 ## Features
 
@@ -54,18 +48,7 @@ python -m http.server 8000
 
 Note: the fonts (Bricolage Grotesque and Work Sans) load from Google Fonts, so you need an internet connection to see them. Without it the page falls back to your system font and still works.
 
-## Upload to GitHub
 
-```bash
-git init
-git add .
-git commit -m "Add Spoke & Sprocket landing page"
-git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/spoke-and-sprocket.git
-git push -u origin main
-```
-
-Create the empty repository on github.com first, and replace `YOUR-USERNAME` with your username. To publish it online, go to **Settings > Pages**, choose the `main` branch and save.
 
 ## Notes
 
